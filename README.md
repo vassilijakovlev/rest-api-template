@@ -1,4 +1,4 @@
 rest-api-template
 =================
 
-JAX-RS (Cxf) + Spring + PostgreSQL
+Gradle + JAX-RS (Apache CXF) + Spring + PostgreSQL
