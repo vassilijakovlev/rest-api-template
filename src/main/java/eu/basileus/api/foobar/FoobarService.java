@@ -7,4 +7,5 @@ public interface FoobarService {
 
   public List<Foobar> getFoobars();
 
+  void save(Foobar foobar);
 }

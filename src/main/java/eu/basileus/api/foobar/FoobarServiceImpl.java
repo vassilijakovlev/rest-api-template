@@ -15,4 +15,9 @@ public class FoobarServiceImpl implements FoobarService {
   public List<Foobar> getFoobars() {
     return foobarDao.loadAll();
   }
+
+  @Override
+  public void save(Foobar foobar) {
+    foobarDao.save(foobar);
+  }
 }

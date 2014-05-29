@@ -17,4 +17,8 @@ public class FoobarDao extends BaseDao {
     foobar.setStatus("baz");
     return Collections.singletonList(foobar);
   }
+
+  public void save(Foobar foobar) {
+    // TODO
+  }
 }
