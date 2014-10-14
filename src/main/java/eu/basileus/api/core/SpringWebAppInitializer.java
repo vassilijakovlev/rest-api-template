@@ -11,7 +11,6 @@ import java.util.Set;
 
 public class SpringWebAppInitializer implements WebApplicationInitializer {
 
-
   @Override
   public void onStartup(ServletContext container) {
     AnnotationConfigWebApplicationContext appContext =

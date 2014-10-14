@@ -1,6 +1,7 @@
 package eu.basileus.api.core;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
@@ -26,10 +27,19 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Consumes(APPLICATION_JSON)
 public class GsonProvider<T> implements MessageBodyReader<T>, MessageBodyWriter<T> {
 
+  /**
+   * ISO 8601 compliant date time format (requires Java 7+)
+   */
+  public final static String DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssX";
+
   private final Gson gson;
 
   public GsonProvider() {
-    gson = new Gson();
+    gson = getGsonBuilder().create();
+  }
+
+  public static GsonBuilder getGsonBuilder() {
+    return new GsonBuilder().setDateFormat(DATE_TIME_FORMAT);
   }
 
   @Override
